@@ -6,14 +6,65 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4935C6AD30082107009ECB49 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935C6AC30082107009ECB49 /* WidgetKit.framework */; };
+		4935C6AF30082107009ECB49 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935C6AE30082107009ECB49 /* SwiftUI.framework */; };
+		4935C6BE30082108009ECB49 /* stellarWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4935C6AA30082107009ECB49 /* stellarWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4935C6BC30082108009ECB49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4935C68030080398009ECB49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4935C6A930082107009ECB49;
+			remoteInfo = stellarWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4935C6C330082108009ECB49 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4935C6BE30082108009ECB49 /* stellarWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4935C68830080398009ECB49 /* stellar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stellar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4935C6AA30082107009ECB49 /* stellarWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = stellarWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4935C6AC30082107009ECB49 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4935C6AE30082107009ECB49 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4935C6BF30082108009ECB49 /* Exceptions for "stellarWidgets" folder in "stellarWidgetsExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 4935C6A930082107009ECB49 /* stellarWidgetsExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4935C68A30080398009ECB49 /* stellar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = stellar;
+			sourceTree = "<group>";
+		};
+		4935C6B030082107009ECB49 /* stellarWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4935C6BF30082108009ECB49 /* Exceptions for "stellarWidgets" folder in "stellarWidgetsExtension" target */,
+			);
+			path = stellarWidgets;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +77,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4935C6A730082107009ECB49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4935C6AF30082107009ECB49 /* SwiftUI.framework in Frameworks */,
+				4935C6AD30082107009ECB49 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				4935C68A30080398009ECB49 /* stellar */,
+				4935C6B030082107009ECB49 /* stellarWidgets */,
+				4935C6AB30082107009ECB49 /* Frameworks */,
 				4935C68930080398009ECB49 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				4935C68830080398009ECB49 /* stellar.app */,
+				4935C6AA30082107009ECB49 /* stellarWidgetsExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4935C6AB30082107009ECB49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4935C6AC30082107009ECB49 /* WidgetKit.framework */,
+				4935C6AE30082107009ECB49 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +127,12 @@
 				4935C68430080398009ECB49 /* Sources */,
 				4935C68530080398009ECB49 /* Frameworks */,
 				4935C68630080398009ECB49 /* Resources */,
+				4935C6C330082108009ECB49 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4935C6BD30082108009ECB49 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4935C68A30080398009ECB49 /* stellar */,
@@ -69,6 +143,28 @@
 			productName = stellar;
 			productReference = 4935C68830080398009ECB49 /* stellar.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4935C6A930082107009ECB49 /* stellarWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4935C6C030082108009ECB49 /* Build configuration list for PBXNativeTarget "stellarWidgetsExtension" */;
+			buildPhases = (
+				4935C6A630082107009ECB49 /* Sources */,
+				4935C6A730082107009ECB49 /* Frameworks */,
+				4935C6A830082107009ECB49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4935C6B030082107009ECB49 /* stellarWidgets */,
+			);
+			name = stellarWidgetsExtension;
+			packageProductDependencies = (
+			);
+			productName = stellarWidgetsExtension;
+			productReference = 4935C6AA30082107009ECB49 /* stellarWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +177,9 @@
 				LastUpgradeCheck = 2660;
 				TargetAttributes = {
 					4935C68730080398009ECB49 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					4935C6A930082107009ECB49 = {
 						CreatedOnToolsVersion = 26.6;
 					};
 				};
@@ -100,12 +199,20 @@
 			projectRoot = "";
 			targets = (
 				4935C68730080398009ECB49 /* stellar */,
+				4935C6A930082107009ECB49 /* stellarWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4935C68630080398009ECB49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4935C6A830082107009ECB49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +229,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4935C6A630082107009ECB49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4935C6BD30082108009ECB49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4935C6A930082107009ECB49 /* stellarWidgetsExtension */;
+			targetProxy = 4935C6BC30082108009ECB49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4935C69130080399009ECB49 /* Debug */ = {
@@ -306,6 +428,64 @@
 			};
 			name = Release;
 		};
+		4935C6C130082108009ECB49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = stellarWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = stellarWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-l-l.stellar.stellar.stellarWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4935C6C230082108009ECB49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = stellarWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = stellarWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-l-l.stellar.stellar.stellarWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -323,6 +503,15 @@
 			buildConfigurations = (
 				4935C69430080399009ECB49 /* Debug */,
 				4935C69530080399009ECB49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4935C6C030082108009ECB49 /* Build configuration list for PBXNativeTarget "stellarWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4935C6C130082108009ECB49 /* Debug */,
+				4935C6C230082108009ECB49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
