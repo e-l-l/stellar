@@ -141,9 +141,6 @@ struct WorldClockView: View {
     private func panelBackground(day: Bool, radius: CGFloat, glowRadius: CGFloat) -> some View {
         let shape = RoundedRectangle(cornerRadius: radius, style: .continuous)
         ZStack {
-            // Base fill so the panel shape always survives, including tinted/
-            // accented contexts where the colored wash is dropped.
-            shape.fill(Color.white.opacity(0.035))
             if isFullColor {
                 let wash = day ? Color.wcDayWash : Color.wcNightWash
                 // Concentrated top-trailing glow radiating from behind the glyph,
@@ -160,6 +157,10 @@ struct WorldClockView: View {
                         endRadius: glowRadius
                     )
                 )
+            } else {
+                // Tinted/accented rendering strips the wash. Keep a subtle shape
+                // fill there so panel grouping remains visible without color.
+                shape.fill(Color.white.opacity(0.035))
             }
         }
     }
