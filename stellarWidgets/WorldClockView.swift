@@ -56,7 +56,11 @@ struct WorldClockView: View {
             Spacer(minLength: 0)
             timeView(city, digitsSize: 28, meridiemSize: 14, showMeridiem: true)
         }
-        .padding(.vertical, 13)
+        // Small widgets leave only 66pt per cell on compact devices. Larger
+        // vertical padding makes both cells overflow and SwiftUI compresses the
+        // outer 9pt top/bottom inset instead. Six points keeps the rows fitting
+        // while preserving the intended full-tile margin on physical devices.
+        .padding(.vertical, 6)
         .padding(.horizontal, 15)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .background(panelBackground(day: day, radius: 18, glowRadius: 105))
