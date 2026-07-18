@@ -24,7 +24,7 @@ struct StepsWidget: Widget {
             provider: StepsProvider()
         ) { entry in
             StepsView(entry: entry)
-                .containerBackground(for: .widget) { Color.clear }  // design handoff
+                .containerBackground(for: .widget) { WellBackground() }
         }
         .configurationDisplayName("Steps")
         .description("Show today's step count and progress toward your daily goal.")
