@@ -12,36 +12,39 @@
 //  authorization the watch app already obtained. Shared reader policy preserves
 //  legitimate zero, unavailable, failed, and cancelled outcomes distinctly.
 //
+//  The goal is read from the shared App Group (StepGoalStore), written by the
+//  watch app. A plain TimelineProvider (not AppIntentTimelineProvider) uses
+//  completion handlers and has no recommendations(); the async HealthKit read
+//  runs inside a Task before the completion fires.
+//
 
-import SwiftUI
 import WidgetKit
 
-struct StepsProvider: AppIntentTimelineProvider {
+struct StepsProvider: TimelineProvider {
     private static let reloadInterval: TimeInterval = 15 * 60
-
-    // watchOS requires recommendations: the pre-configured options the system
-    // offers in the complication picker. We surface one with the default goal.
-    func recommendations() -> [AppIntentRecommendation<StepsConfigIntent>] {
-        [AppIntentRecommendation(intent: StepsConfigIntent(), description: Text("Steps"))]
-    }
 
     func placeholder(in context: Context) -> StepsEntry {
         sampleEntry(goal: .standard, asOf: Date())
     }
 
-    func snapshot(for configuration: StepsConfigIntent, in context: Context) async -> StepsEntry {
+    func getSnapshot(in context: Context, completion: @escaping (StepsEntry) -> Void) {
         let now = Date()
-        let goal = StepGoal(clamping: configuration.goal)
-        guard !context.isPreview else { return sampleEntry(goal: goal, asOf: now) }
-        return await entry(goal: goal, asOf: now)
+        let goal = StepGoalStore().goal
+        guard !context.isPreview else {
+            completion(sampleEntry(goal: goal, asOf: now))
+            return
+        }
+        Task { completion(await entry(goal: goal, asOf: now)) }
     }
 
-    func timeline(for configuration: StepsConfigIntent, in context: Context) async -> Timeline<StepsEntry> {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<StepsEntry>) -> Void) {
         let now = Date()
-        let goal = StepGoal(clamping: configuration.goal)
-        let entry = await entry(goal: goal, asOf: now)
-        let reload = now.addingTimeInterval(Self.reloadInterval)
-        return Timeline(entries: [entry], policy: .after(reload))
+        let goal = StepGoalStore().goal
+        Task {
+            let entry = await entry(goal: goal, asOf: now)
+            let reload = now.addingTimeInterval(Self.reloadInterval)
+            completion(Timeline(entries: [entry], policy: .after(reload)))
+        }
     }
 
     private func entry(goal: StepGoal, asOf date: Date) async -> StepsEntry {

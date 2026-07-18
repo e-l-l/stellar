@@ -13,10 +13,9 @@ this directory is the WidgetKit plumbing plus the corner-family visuals.
 | File | Responsibility |
 | --- | --- |
 | `stellarWatchWidgetsBundle.swift` | `@main` `WidgetBundle`. Lists complications vended (just `StepsWidget`). Xcode's sample + control widgets were removed — controls are out of scope. |
-| `StepsWidget.swift` | The `Widget` declaration. Ties intent + provider + view; declares `.accessoryCircular` + `.accessoryCorner`; sets the container background via `WellBackground`. |
-| `StepsProvider.swift` | `AppIntentTimelineProvider`. Future steps can't be predicted, so each timeline is a **single current entry** with a `.after(~15min)` reload. Queries HealthKit directly (reads the app-granted authorization). Supplies `recommendations()` (required on watchOS). Preserves the zero / unavailable / failed / cancelled distinction from the shared reader. |
+| `StepsWidget.swift` | The `Widget` declaration. **`StaticConfiguration`** (no intent — watchOS has no on-device parameter editor). Ties provider + view; declares `.accessoryCircular` + `.accessoryCorner`; sets the container background via `WellBackground`. |
+| `StepsProvider.swift` | Plain `TimelineProvider` (completion-handler `getSnapshot`/`getTimeline`, no `recommendations()`). Future steps can't be predicted, so each timeline is a **single current entry** with a `.after(~15min)` reload. Uses the standard goal for placeholders; snapshots and timelines read the shared `StepGoalStore` (App Group) before querying HealthKit directly (app-granted authorization). Preserves the zero / unavailable / failed / cancelled distinction from the shared reader. |
 | `StepsEntry.swift` | `TimelineEntry`: the `StepReadState` + validated `StepGoal`. `date` derives from the reading. |
-| `StepsConfigIntent.swift` | `WidgetConfigurationIntent` — the "Edit" sheet. One `@Parameter` for the daily goal (default 10k, clamped 1…100k). HealthKit has no goal concept, so it must come from config. |
 | `StepsView.swift` | WidgetKit adapter. `accessoryCircular` → shared `StepsCircularVisual`; `accessoryCorner` → local `StepsCornerValueVisual` + `widgetLabel` gauge. Also defines `WellBackground` (black well in full-color contexts, clear when the system removes the container) and holds the `#Preview`s covering every state. |
 
 ## Notes
@@ -24,5 +23,8 @@ this directory is the WidgetKit plumbing plus the corner-family visuals.
 - **Freshness path:** the 15-minute reload is the floor. While the watch app is active it
   reloads this extension via `WidgetCenter` on each new HealthKit sample, so counts update
   sooner (see `stellarWatch Watch App/context.md`).
+- **Displayed count is watch-only:** the shared reader counts only this Apple Watch's own
+  samples (see `stellarWatchShared/context.md`), so the complication tracks Apple's Fitness
+  figure rather than the inflated unfiltered store total (which also includes iPhone steps).
 - Corner geometry is owned here (not shared) because accessory-corner layout is WidgetKit-
   specific; the app gallery only *approximates* it.

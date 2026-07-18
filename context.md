@@ -30,10 +30,12 @@ app embeds `stellarWatchWidgetsExtension`.
 - **World Clock** — an iOS widget showing the time in two user-chosen cities. Fully
   deterministic from the entry `date`; no external data source. Lives in `stellarWidgets/`
   (WidgetKit plumbing) + `stellarWorldClockShared/` (model + renderer).
-- **Steps** — a watch complication showing today's step count vs. a goal. Data comes from
-  HealthKit on the watch. Lives in `stellarWatchWidgets/` (WidgetKit plumbing) +
-  `stellarWatchShared/` (models + reader + visuals). The watch app drives authorization
-  and refreshes.
+- **Steps** — a watch complication showing today's step count vs. a goal. Steps come from
+  HealthKit on the watch; the goal is owned by the watch app and shared to the complication
+  through a watch-local App Group (`StepGoalStore`) — the complication is a `StaticConfiguration`
+  widget (watchOS has no on-device intent-parameter editor). Lives in `stellarWatchWidgets/`
+  (WidgetKit plumbing) + `stellarWatchShared/` (models + reader + visuals + goal store). The
+  watch app drives authorization, refreshes, and sets the goal.
 
 The iOS app's **Gallery** previews *both* domains using the same shared renderers the real
 extensions use — World Clock ticks live via `TimelineView`, Steps uses representative
@@ -51,6 +53,7 @@ it everywhere — you wire it into the targets that need it.
 | `stellarWatchShared/StepCount.swift` | ✓ | | ✓ | ✓ |
 | `stellarWatchShared/StepsReader.swift` | | | ✓ | ✓ |
 | `stellarWatchShared/StepsVisuals.swift` | ✓ | | | ✓ |
+| `stellarWatchShared/StepGoalStore.swift` | | | ✓ | ✓ |
 
 (App membership on `StepCount`/`StepsVisuals` is what lets the Gallery preview Steps.)
 

@@ -16,14 +16,19 @@ struct ContentView: View {
     @State private var model = WatchStepsModel()
 
     var body: some View {
-        VStack {
-            Text(stepText)
-            Text(String(describing: model.authState))
-            Button("Authorize") {
-                Task { await model.authorizeAndRefresh() }
+        NavigationStack {
+            VStack {
+                Text(stepText)
+                Text(String(describing: model.authState))
+                Button("Authorize") {
+                    Task { await model.authorizeAndRefresh() }
+                }
+                NavigationLink("Daily Goal") {
+                    GoalSettingView()
+                }
             }
+            .task { await model.start() }
         }
-        .task { await model.start() }
     }
 
     private var stepText: String {

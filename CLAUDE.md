@@ -50,8 +50,10 @@ synchronized groups.
 - App entry point: `stellar/stellarApp.swift`; app root view: `stellar/ContentView.swift`.
 - Info.plist content is generated from build settings; no source `Info.plist` exists.
 - Intended baseline: iOS 26 and watchOS 26, retaining iPad support.
-- Still absent: test, entitlement, dependency, lint, and formatting targets/configuration;
-  App Groups, Watch Connectivity, CloudKit, persistence, and networking (see roadmap below).
+- Still absent: test, dependency, lint, and formatting targets/configuration;
+  Watch Connectivity, CloudKit, and networking (see roadmap below). A watch-local **App Group**
+  (`group.com.e-l-l.stellar`) now backs the Steps goal via shared `UserDefaults` — the first
+  cross-target persistence; no durable database/store yet.
 
 ## Commands
 
@@ -158,6 +160,10 @@ Preserve current Swift language and concurrency settings unless task explicitly 
 When test targets exist, use Swift Testing for new unit/integration tests and XCTest for UI automation/performance. Test snapshot encoding/version handling, stale-data policy, timeline generation, formatting, and transport payload interpretation.
 
 Add `#Preview` coverage for every declared family and meaningful states: placeholder, normal, empty, stale, missing/corrupt data, and long/localized values. Previews validate layout, not scheduling, App Group access, Watch Connectivity, or production refresh budgets. Verify those in simulators and physical devices, including runs without attached debugger.
+
+## Testing and Verification
+
+Testing and verification are the user's responsibility. Code changes are complete when they compile and are ready for testing; do not attempt to test via screen recording or interactive verification.
 
 ## Apple Documentation Baseline
 

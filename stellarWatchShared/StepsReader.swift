@@ -103,11 +103,30 @@ struct StepsReader {
         }
     }
 
-    /// Today's cumulative step count from local midnight to `now`. A successful
-    /// query with no samples is a real zero-step reading, not a failure.
-    private func queryTodaySteps(asOf now: Date) async throws -> StepCount {
+    /// Restricts the query to samples this Apple Watch recorded itself, matched
+    /// by device model. The watch's local store also holds the paired iPhone's
+    /// step samples, which sync in and inflate an unfiltered `cumulativeSum` (the
+    /// iPhone overcounts from in-pocket/in-hand motion). Apple's own Fitness
+    /// figure trusts the on-wrist watch, so filtering to this device tracks that
+    /// number. Falls back to the time range alone when the local model is
+    /// unknown, so we never build an empty filter.
+    private func todayStepPredicate(asOf now: Date) -> NSPredicate {
         let start = Calendar.current.startOfDay(for: now)
-        let predicate = HKQuery.predicateForSamples(withStart: start, end: now)
+        let timePredicate = HKQuery.predicateForSamples(withStart: start, end: now)
+
+        guard let model = HKDevice.local().model else { return timePredicate }
+        let devicePredicate = HKQuery.predicateForObjects(
+            withDeviceProperty: HKDevicePropertyKeyModel,
+            allowedValues: [model]
+        )
+        return NSCompoundPredicate(andPredicateWithSubpredicates: [timePredicate, devicePredicate])
+    }
+
+    /// Today's cumulative step count from local midnight to `now`, limited to
+    /// this watch's own samples (see `todayStepPredicate`). A successful query
+    /// with no samples is a real zero-step reading, not a failure.
+    private func queryTodaySteps(asOf now: Date) async throws -> StepCount {
+        let predicate = todayStepPredicate(asOf: now)
 
         let operation = StatisticsQueryOperation(store: store)
         return try await withTaskCancellationHandler {

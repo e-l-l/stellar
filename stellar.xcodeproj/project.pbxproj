@@ -28,6 +28,8 @@
 		B10000013010000000000018 /* stellarWorldClockShared/WorldClockPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000002 /* stellarWorldClockShared/WorldClockPalette.swift */; };
 		B10000013010000000000019 /* stellarWorldClockShared/WorldClockRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000003 /* stellarWorldClockShared/WorldClockRenderer.swift */; };
 		B1000001301000000000001A /* stellarWatchShared/StepsVisuals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000004 /* stellarWatchShared/StepsVisuals.swift */; };
+		B10000013010000000000020 /* stellarWatchShared/StepGoalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000005 /* stellarWatchShared/StepGoalStore.swift */; };
+		B10000013010000000000021 /* stellarWatchShared/StepGoalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000005 /* stellarWatchShared/StepGoalStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,12 +106,14 @@
 		B10000013010000000000002 /* stellarWorldClockShared/WorldClockPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWorldClockShared/WorldClockPalette.swift; sourceTree = "<group>"; };
 		B10000013010000000000003 /* stellarWorldClockShared/WorldClockRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWorldClockShared/WorldClockRenderer.swift; sourceTree = "<group>"; };
 		B10000013010000000000004 /* stellarWatchShared/StepsVisuals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepsVisuals.swift; sourceTree = "<group>"; };
+		B10000013010000000000005 /* stellarWatchShared/StepGoalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepGoalStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		4935C6BF30082108009ECB49 /* Exceptions for "stellarWidgets" folder in "stellarWidgetsExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				context.md,
 				Info.plist,
 			);
 			target = 4935C6A930082107009ECB49 /* stellarWidgetsExtension */;
@@ -117,15 +121,35 @@
 		4935C6FF3009774A009ECB49 /* Exceptions for "stellarWatchWidgets" folder in "stellarWatchWidgetsExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				context.md,
 				Info.plist,
 			);
 			target = 4935C6EC3009774A009ECB49 /* stellarWatchWidgetsExtension */;
+		};
+		B10000013010000000000030 /* Exceptions for "stellar" folder in "stellar" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				context.md,
+				DesignSystem/context.md,
+				Screens/context.md,
+			);
+			target = 4935C68730080398009ECB49 /* stellar */;
+		};
+		B10000013010000000000031 /* Exceptions for "stellarWatch Watch App" folder in "stellarWatch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				context.md,
+			);
+			target = 4935C6D9300976B5009ECB49 /* stellarWatch Watch App */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4935C68A30080398009ECB49 /* stellar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B10000013010000000000030 /* Exceptions for "stellar" folder in "stellar" target */,
+			);
 			path = stellar;
 			sourceTree = "<group>";
 		};
@@ -139,6 +163,9 @@
 		};
 		4935C6DB300976B5009ECB49 /* stellarWatch Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B10000013010000000000031 /* Exceptions for "stellarWatch Watch App" folder in "stellarWatch Watch App" target */,
+			);
 			path = "stellarWatch Watch App";
 			sourceTree = "<group>";
 		};
@@ -198,6 +225,7 @@
 				4935C71A30097CCE009ECB49 /* stellarWatchShared/StepCount.swift */,
 				4935C71B30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift */,
 				B10000013010000000000004 /* stellarWatchShared/StepsVisuals.swift */,
+				B10000013010000000000005 /* stellarWatchShared/StepGoalStore.swift */,
 				4935C705300977C6009ECB49 /* stellarWatchWidgetsExtension.entitlements */,
 				4935C68A30080398009ECB49 /* stellar */,
 				4935C6B030082107009ECB49 /* stellarWidgets */,
@@ -431,6 +459,7 @@
 			files = (
 				4935C71C30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift in Sources */,
 				4935C71D30097CCE009ECB49 /* stellarWatchShared/StepCount.swift in Sources */,
+				B10000013010000000000020 /* stellarWatchShared/StepGoalStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +470,7 @@
 				4935C72230097CCE009ECB49 /* stellarWatchShared/StepsReader.swift in Sources */,
 				4935C72330097CCE009ECB49 /* stellarWatchShared/StepCount.swift in Sources */,
 				B1000001301000000000001A /* stellarWatchShared/StepsVisuals.swift in Sources */,
+				B10000013010000000000021 /* stellarWatchShared/StepGoalStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
