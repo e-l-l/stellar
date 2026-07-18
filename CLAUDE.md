@@ -10,22 +10,48 @@ Pick sensible defaults for minor code choices. Ask before changing product scope
 
 Use current documentation for version-sensitive Apple APIs. Prefer official Apple documentation when Context7 does not provide authoritative WidgetKit, watchOS, or Xcode guidance.
 
+## Context files
+
+Every important directory carries a `context.md`: the repo root holds the target graph,
+feature domains, and per-file shared-code membership; each code directory documents its
+files and gotchas. **Before exploring or changing a directory, read its `context.md` first**
+(and the root one to orient) — it is faster and more reliable than re-deriving structure
+from the sources. When a change adds, removes, moves, or repurposes files, or alters a
+directory's role or a target's shared-file membership, **update the affected `context.md`
+(and the root map if the target graph or membership changes) in the same change.** Keep them
+consistent with this file's "Current Repository State".
+
 ## Current Repository State
 
-This is currently a minimal SwiftUI iOS application, not yet the planned multi-target widget product.
+Stellar is now a multi-target widget/complication product (no longer the single minimal app
+this section once described). See `context.md` (repo root) for the target graph, feature
+domains, and per-file shared-code membership; each code directory has its own `context.md`.
+
+Four targets, each with a committed shared scheme:
+
+| Target | Directory | Platform · family | Deployment | Bundle identifier |
+| --- | --- | --- | --- | --- |
+| `stellar` | `stellar/` | iOS · iPhone+iPad | iOS 26.5 | `com.e-l-l.stellar.stellar` |
+| `stellarWidgetsExtension` | `stellarWidgets/` | iOS · iPhone+iPad | iOS 26.5 | `…stellar.stellarWidgets` |
+| `stellarWatch Watch App` | `stellarWatch Watch App/` | watchOS · watch | watchOS 26.5 | `…stellar.watchkitapp` |
+| `stellarWatchWidgetsExtension` | `stellarWatchWidgets/` | watchOS · watch | watchOS 26.5 | `…stellar.watchkitapp.stellarWatchWidgets` |
+
+The `stellar` app embeds the iOS widget extension and the watch app; the watch app embeds the
+watch widget extension. Two shared source directories (`stellarWorldClockShared/`,
+`stellarWatchShared/`) are compiled into targets by explicit per-file membership, not as
+synchronized groups.
 
 - Project: `stellar.xcodeproj`, created with Xcode 26.6 project format.
-- Existing target and discoverable scheme: `stellar`.
-- Product: `stellar.app`; bundle identifier: `com.e-l-l.stellar.stellar`.
-- Current deployment setting: iOS 26.5; current device families: iPhone and iPad.
-- Intended baseline: iOS 26 and watchOS 26, retaining iPad support. Align targets only as an explicit project change.
+- Product of the app target: `stellar.app`.
 - Swift language mode: Swift 5.
-- `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor` and approachable concurrency are enabled.
-- Entry point: `stellar/stellarApp.swift`; current root view: `stellar/ContentView.swift`.
+- `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor` and approachable concurrency are enabled on the
+  app and watch app. The two WidgetKit extensions do **not** set it — review concurrency
+  isolation per target rather than assuming inheritance.
+- App entry point: `stellar/stellarApp.swift`; app root view: `stellar/ContentView.swift`.
 - Info.plist content is generated from build settings; no source `Info.plist` exists.
-- No widget, watchOS, test, entitlement, dependency, lint, or formatting target/configuration exists yet.
-
-Architecture below is intended direction, not existing infrastructure.
+- Intended baseline: iOS 26 and watchOS 26, retaining iPad support.
+- Still absent: test, entitlement, dependency, lint, and formatting targets/configuration;
+  App Groups, Watch Connectivity, CloudKit, persistence, and networking (see roadmap below).
 
 ## Commands
 
@@ -72,7 +98,7 @@ Never commit machine-specific simulator UDIDs.
 - Give future iOS widget, watch app, watch widget, tests, and shared code separate top-level directories. Do not place all target code under app-owned `stellar/`.
 - Treat `stellar.xcodeproj/project.pbxproj` as Xcode-managed. Edit it only for intentional project configuration.
 - Do not modify `stellar.xcodeproj/**/xcuserdata/**` as incidental churn. Preserve tracked `stellar.xcodeproj/xcuserdata/ell.xcuserdatad/xcschemes/xcschememanagement.plist` unless scheme management is task.
-- `xcodebuild` discovers `stellar`, but no explicit shared `.xcscheme` is committed. Add and verify proper shared scheme before CI depends on scheme actions.
+- All four targets have committed shared schemes under `stellar.xcodeproj/xcshareddata/xcschemes/` (`stellar`, `stellarWidgetsExtension`, `stellarWatch Watch App`, `stellarWatchWidgetsExtension`); `xcodebuild -list` discovers all four. Verify a scheme's actions before CI depends on it.
 
 ## Planned Product Architecture
 
