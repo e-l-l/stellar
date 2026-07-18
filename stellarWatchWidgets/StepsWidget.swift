@@ -6,9 +6,8 @@
 //  and the view, and declares the supported accessory families (circular +
 //  corner on the watch face and in the Smart Stack).
 //
-//  The container background is required by WidgetKit; its appearance is a design
-//  concern, so the closure is intentionally left as a neutral placeholder for
-//  the design handoff to fill in.
+//  The container background is required by WidgetKit. WellBackground supplies
+//  the black full-color well and stays clear when watchOS removes backgrounds.
 //
 
 import SwiftUI

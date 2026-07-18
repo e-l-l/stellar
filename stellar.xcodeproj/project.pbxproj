@@ -18,6 +18,16 @@
 		4935C71D30097CCE009ECB49 /* stellarWatchShared/StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71A30097CCE009ECB49 /* stellarWatchShared/StepCount.swift */; };
 		4935C72230097CCE009ECB49 /* stellarWatchShared/StepsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71B30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift */; };
 		4935C72330097CCE009ECB49 /* stellarWatchShared/StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71A30097CCE009ECB49 /* stellarWatchShared/StepCount.swift */; };
+		B10000013010000000000011 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935C6AC30082107009ECB49 /* WidgetKit.framework */; };
+		B10000013010000000000012 /* stellarWorldClockShared/City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000001 /* stellarWorldClockShared/City.swift */; };
+		B10000013010000000000013 /* stellarWorldClockShared/WorldClockPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000002 /* stellarWorldClockShared/WorldClockPalette.swift */; };
+		B10000013010000000000014 /* stellarWorldClockShared/WorldClockRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000003 /* stellarWorldClockShared/WorldClockRenderer.swift */; };
+		B10000013010000000000015 /* stellarWatchShared/StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71A30097CCE009ECB49 /* stellarWatchShared/StepCount.swift */; };
+		B10000013010000000000016 /* stellarWatchShared/StepsVisuals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000004 /* stellarWatchShared/StepsVisuals.swift */; };
+		B10000013010000000000017 /* stellarWorldClockShared/City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000001 /* stellarWorldClockShared/City.swift */; };
+		B10000013010000000000018 /* stellarWorldClockShared/WorldClockPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000002 /* stellarWorldClockShared/WorldClockPalette.swift */; };
+		B10000013010000000000019 /* stellarWorldClockShared/WorldClockRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000003 /* stellarWorldClockShared/WorldClockRenderer.swift */; };
+		B1000001301000000000001A /* stellarWatchShared/StepsVisuals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000004 /* stellarWatchShared/StepsVisuals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +100,10 @@
 		4935C705300977C6009ECB49 /* stellarWatchWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stellarWatchWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		4935C71A30097CCE009ECB49 /* stellarWatchShared/StepCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepCount.swift; sourceTree = "<group>"; };
 		4935C71B30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepsReader.swift; sourceTree = "<group>"; };
+		B10000013010000000000001 /* stellarWorldClockShared/City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWorldClockShared/City.swift; sourceTree = "<group>"; };
+		B10000013010000000000002 /* stellarWorldClockShared/WorldClockPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWorldClockShared/WorldClockPalette.swift; sourceTree = "<group>"; };
+		B10000013010000000000003 /* stellarWorldClockShared/WorldClockRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWorldClockShared/WorldClockRenderer.swift; sourceTree = "<group>"; };
+		B10000013010000000000004 /* stellarWatchShared/StepsVisuals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepsVisuals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -143,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10000013010000000000011 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +192,12 @@
 		4935C67F30080398009ECB49 = {
 			isa = PBXGroup;
 			children = (
+				B10000013010000000000001 /* stellarWorldClockShared/City.swift */,
+				B10000013010000000000002 /* stellarWorldClockShared/WorldClockPalette.swift */,
+				B10000013010000000000003 /* stellarWorldClockShared/WorldClockRenderer.swift */,
 				4935C71A30097CCE009ECB49 /* stellarWatchShared/StepCount.swift */,
 				4935C71B30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift */,
+				B10000013010000000000004 /* stellarWatchShared/StepsVisuals.swift */,
 				4935C705300977C6009ECB49 /* stellarWatchWidgetsExtension.entitlements */,
 				4935C68A30080398009ECB49 /* stellar */,
 				4935C6B030082107009ECB49 /* stellarWidgets */,
@@ -388,6 +407,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10000013010000000000012 /* stellarWorldClockShared/City.swift in Sources */,
+				B10000013010000000000013 /* stellarWorldClockShared/WorldClockPalette.swift in Sources */,
+				B10000013010000000000014 /* stellarWorldClockShared/WorldClockRenderer.swift in Sources */,
+				B10000013010000000000015 /* stellarWatchShared/StepCount.swift in Sources */,
+				B10000013010000000000016 /* stellarWatchShared/StepsVisuals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +419,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10000013010000000000017 /* stellarWorldClockShared/City.swift in Sources */,
+				B10000013010000000000018 /* stellarWorldClockShared/WorldClockPalette.swift in Sources */,
+				B10000013010000000000019 /* stellarWorldClockShared/WorldClockRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +440,7 @@
 			files = (
 				4935C72230097CCE009ECB49 /* stellarWatchShared/StepsReader.swift in Sources */,
 				4935C72330097CCE009ECB49 /* stellarWatchShared/StepCount.swift in Sources */,
+				B1000001301000000000001A /* stellarWatchShared/StepsVisuals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

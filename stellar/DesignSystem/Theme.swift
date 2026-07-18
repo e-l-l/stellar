@@ -41,7 +41,6 @@ extension Color {
     // Decorative — reusable one-off values kept out of the views
     static let stellarShadow = Color.black.opacity(0.4)   // tile / card drop shadow
     static let stellarHairline = Color(hex: 0xffffff, alpha: 0.08)  // 1px borders
-    static let stellarRedacted = Color(hex: 0xffffff, alpha: 0.14)  // faux text lines
     static let stellarSplashTop = Color(hex: 0x1a1114)    // splash gradient center
     static let stellarSplashBottom = Color(hex: 0x0a0a0b) // splash gradient edge
 }
@@ -49,12 +48,9 @@ extension Color {
 /// Corner radii from the handoff. Different families use different radii by
 /// design, so each is named rather than collapsed into one value.
 enum StellarRadius {
-    static let tile: CGFloat = 22          // widget tiles
-    static let categoryTile: CGFloat = 20  // By-Category preview tiles
-    static let rectRow: CGFloat = 18       // rectangular complication rows
+    static let tile: CGFloat = 22          // widget and complication tiles
     static let segmentTrack: CGFloat = 9   // segmented control track
     static let segmentPill: CGFloat = 7    // segmented control selection
-    static let glyph: CGFloat = 7          // small category glyph
 }
 
 /// Uppercase grouped-list section header ("SMALL", "CIRCULAR", …).
