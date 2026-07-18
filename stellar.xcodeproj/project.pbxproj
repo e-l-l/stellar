@@ -14,10 +14,10 @@
 		4935C6EE3009774A009ECB49 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935C6AC30082107009ECB49 /* WidgetKit.framework */; };
 		4935C6EF3009774A009ECB49 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935C6AE30082107009ECB49 /* SwiftUI.framework */; };
 		4935C6FE3009774A009ECB49 /* stellarWatchWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4935C6ED3009774A009ECB49 /* stellarWatchWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4935C71C30097CCE009ECB49 /* StepsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71B30097CCE009ECB49 /* StepsReader.swift */; };
-		4935C71D30097CCE009ECB49 /* StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71A30097CCE009ECB49 /* StepCount.swift */; };
-		4935C72230097CCE009ECB49 /* StepsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71B30097CCE009ECB49 /* StepsReader.swift */; };
-		4935C72330097CCE009ECB49 /* StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71A30097CCE009ECB49 /* StepCount.swift */; };
+		4935C71C30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71B30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift */; };
+		4935C71D30097CCE009ECB49 /* stellarWatchShared/StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71A30097CCE009ECB49 /* stellarWatchShared/StepCount.swift */; };
+		4935C72230097CCE009ECB49 /* stellarWatchShared/StepsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71B30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift */; };
+		4935C72330097CCE009ECB49 /* stellarWatchShared/StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71A30097CCE009ECB49 /* stellarWatchShared/StepCount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,8 +88,8 @@
 		4935C6DA300976B5009ECB49 /* stellarWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "stellarWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4935C6ED3009774A009ECB49 /* stellarWatchWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = stellarWatchWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4935C705300977C6009ECB49 /* stellarWatchWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stellarWatchWidgetsExtension.entitlements; sourceTree = "<group>"; };
-		4935C71A30097CCE009ECB49 /* StepCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepCount.swift; sourceTree = "<group>"; };
-		4935C71B30097CCE009ECB49 /* StepsReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepsReader.swift; sourceTree = "<group>"; };
+		4935C71A30097CCE009ECB49 /* stellarWatchShared/StepCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepCount.swift; sourceTree = "<group>"; };
+		4935C71B30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepsReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -177,8 +177,8 @@
 		4935C67F30080398009ECB49 = {
 			isa = PBXGroup;
 			children = (
-				4935C71A30097CCE009ECB49 /* StepCount.swift */,
-				4935C71B30097CCE009ECB49 /* StepsReader.swift */,
+				4935C71A30097CCE009ECB49 /* stellarWatchShared/StepCount.swift */,
+				4935C71B30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift */,
 				4935C705300977C6009ECB49 /* stellarWatchWidgetsExtension.entitlements */,
 				4935C68A30080398009ECB49 /* stellar */,
 				4935C6B030082107009ECB49 /* stellarWidgets */,
@@ -402,8 +402,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4935C71C30097CCE009ECB49 /* StepsReader.swift in Sources */,
-				4935C71D30097CCE009ECB49 /* StepCount.swift in Sources */,
+				4935C71C30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift in Sources */,
+				4935C71D30097CCE009ECB49 /* stellarWatchShared/StepCount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,8 +411,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4935C72230097CCE009ECB49 /* StepsReader.swift in Sources */,
-				4935C72330097CCE009ECB49 /* StepCount.swift in Sources */,
+				4935C72230097CCE009ECB49 /* stellarWatchShared/StepsReader.swift in Sources */,
+				4935C72330097CCE009ECB49 /* stellarWatchShared/StepCount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

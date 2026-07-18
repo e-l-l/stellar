@@ -45,7 +45,7 @@ struct StepsProvider: AppIntentTimelineProvider {
     }
 
     private func entry(goal: StepGoal, asOf date: Date) async -> StepsEntry {
-        let reading = await StepsReader().readTodaySteps(asOf: date) ?? .pending(asOf: date)
+        let reading = await StepsReader().readTodaySteps(asOf: date) ?? .unavailable(asOf: date)
         return StepsEntry(reading: reading, goal: goal)
     }
 

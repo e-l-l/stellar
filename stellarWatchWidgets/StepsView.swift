@@ -18,14 +18,14 @@ struct StepsView: View {
     var body: some View {
         switch entry.reading {
         case .pending:
-            Text("--")
+            Text("—")
                 .redacted(reason: .placeholder)
+                .accessibilityLabel("Steps loading")
         case .available(let count):
             Text("\(count.steps)")
-        case .unavailable:
-            Text("Unavailable")
-        case .failed:
-            Text("Error")
+        case .unavailable, .failed:
+            Text("—")
+                .accessibilityLabel("Steps unavailable")
         }
     }
 }
