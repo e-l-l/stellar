@@ -7,12 +7,45 @@
 		<key>stellar.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>3</integer>
+		</dict>
+		<key>stellarWatch Watch App.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>stellarWatchWidgetsExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>stellarWidgetsExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4935C68730080398009ECB49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4935C6A930082107009ECB49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4935C6D9300976B5009ECB49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4935C6EC3009774A009ECB49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

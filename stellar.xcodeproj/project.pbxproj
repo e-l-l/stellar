@@ -10,6 +10,14 @@
 		4935C6AD30082107009ECB49 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935C6AC30082107009ECB49 /* WidgetKit.framework */; };
 		4935C6AF30082107009ECB49 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935C6AE30082107009ECB49 /* SwiftUI.framework */; };
 		4935C6BE30082108009ECB49 /* stellarWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4935C6AA30082107009ECB49 /* stellarWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4935C6E4300976B6009ECB49 /* stellarWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4935C6DA300976B5009ECB49 /* stellarWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4935C6EE3009774A009ECB49 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935C6AC30082107009ECB49 /* WidgetKit.framework */; };
+		4935C6EF3009774A009ECB49 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935C6AE30082107009ECB49 /* SwiftUI.framework */; };
+		4935C6FE3009774A009ECB49 /* stellarWatchWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4935C6ED3009774A009ECB49 /* stellarWatchWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4935C71C30097CCE009ECB49 /* StepsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71B30097CCE009ECB49 /* StepsReader.swift */; };
+		4935C71D30097CCE009ECB49 /* StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71A30097CCE009ECB49 /* StepCount.swift */; };
+		4935C72230097CCE009ECB49 /* StepsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71B30097CCE009ECB49 /* StepsReader.swift */; };
+		4935C72330097CCE009ECB49 /* StepCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4935C71A30097CCE009ECB49 /* StepCount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -19,6 +27,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4935C6A930082107009ECB49;
 			remoteInfo = stellarWidgetsExtension;
+		};
+		4935C6E2300976B6009ECB49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4935C68030080398009ECB49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4935C6D9300976B5009ECB49;
+			remoteInfo = "stellarWatch Watch App";
+		};
+		4935C6FC3009774A009ECB49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4935C68030080398009ECB49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4935C6EC3009774A009ECB49;
+			remoteInfo = stellarWatchWidgetsExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -34,6 +56,28 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4935C6E8300976B6009ECB49 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4935C6E4300976B6009ECB49 /* stellarWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4935C7033009774A009ECB49 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4935C6FE3009774A009ECB49 /* stellarWatchWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +85,11 @@
 		4935C6AA30082107009ECB49 /* stellarWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = stellarWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4935C6AC30082107009ECB49 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		4935C6AE30082107009ECB49 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4935C6DA300976B5009ECB49 /* stellarWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "stellarWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4935C6ED3009774A009ECB49 /* stellarWatchWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = stellarWatchWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4935C705300977C6009ECB49 /* stellarWatchWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stellarWatchWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		4935C71A30097CCE009ECB49 /* StepCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepCount.swift; sourceTree = "<group>"; };
+		4935C71B30097CCE009ECB49 /* StepsReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stellarWatchShared/StepsReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,6 +99,13 @@
 				Info.plist,
 			);
 			target = 4935C6A930082107009ECB49 /* stellarWidgetsExtension */;
+		};
+		4935C6FF3009774A009ECB49 /* Exceptions for "stellarWatchWidgets" folder in "stellarWatchWidgetsExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 4935C6EC3009774A009ECB49 /* stellarWatchWidgetsExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -65,6 +121,19 @@
 				4935C6BF30082108009ECB49 /* Exceptions for "stellarWidgets" folder in "stellarWidgetsExtension" target */,
 			);
 			path = stellarWidgets;
+			sourceTree = "<group>";
+		};
+		4935C6DB300976B5009ECB49 /* stellarWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "stellarWatch Watch App";
+			sourceTree = "<group>";
+		};
+		4935C6F03009774A009ECB49 /* stellarWatchWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4935C6FF3009774A009ECB49 /* Exceptions for "stellarWatchWidgets" folder in "stellarWatchWidgetsExtension" target */,
+			);
+			path = stellarWatchWidgets;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -86,14 +155,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4935C6D7300976B5009ECB49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4935C6EA3009774A009ECB49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4935C6EF3009774A009ECB49 /* SwiftUI.framework in Frameworks */,
+				4935C6EE3009774A009ECB49 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4935C67F30080398009ECB49 = {
 			isa = PBXGroup;
 			children = (
+				4935C71A30097CCE009ECB49 /* StepCount.swift */,
+				4935C71B30097CCE009ECB49 /* StepsReader.swift */,
+				4935C705300977C6009ECB49 /* stellarWatchWidgetsExtension.entitlements */,
 				4935C68A30080398009ECB49 /* stellar */,
 				4935C6B030082107009ECB49 /* stellarWidgets */,
+				4935C6DB300976B5009ECB49 /* stellarWatch Watch App */,
+				4935C6F03009774A009ECB49 /* stellarWatchWidgets */,
 				4935C6AB30082107009ECB49 /* Frameworks */,
 				4935C68930080398009ECB49 /* Products */,
 			);
@@ -104,6 +194,8 @@
 			children = (
 				4935C68830080398009ECB49 /* stellar.app */,
 				4935C6AA30082107009ECB49 /* stellarWidgetsExtension.appex */,
+				4935C6DA300976B5009ECB49 /* stellarWatch Watch App.app */,
+				4935C6ED3009774A009ECB49 /* stellarWatchWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,11 +220,13 @@
 				4935C68530080398009ECB49 /* Frameworks */,
 				4935C68630080398009ECB49 /* Resources */,
 				4935C6C330082108009ECB49 /* Embed Foundation Extensions */,
+				4935C6E8300976B6009ECB49 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				4935C6BD30082108009ECB49 /* PBXTargetDependency */,
+				4935C6E3300976B6009ECB49 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4935C68A30080398009ECB49 /* stellar */,
@@ -166,6 +260,52 @@
 			productReference = 4935C6AA30082107009ECB49 /* stellarWidgetsExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		4935C6D9300976B5009ECB49 /* stellarWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4935C6E5300976B6009ECB49 /* Build configuration list for PBXNativeTarget "stellarWatch Watch App" */;
+			buildPhases = (
+				4935C6D6300976B5009ECB49 /* Sources */,
+				4935C6D7300976B5009ECB49 /* Frameworks */,
+				4935C6D8300976B5009ECB49 /* Resources */,
+				4935C7033009774A009ECB49 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4935C6FD3009774A009ECB49 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4935C6DB300976B5009ECB49 /* stellarWatch Watch App */,
+			);
+			name = "stellarWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "stellarWatch Watch App";
+			productReference = 4935C6DA300976B5009ECB49 /* stellarWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4935C6EC3009774A009ECB49 /* stellarWatchWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4935C7003009774A009ECB49 /* Build configuration list for PBXNativeTarget "stellarWatchWidgetsExtension" */;
+			buildPhases = (
+				4935C6E93009774A009ECB49 /* Sources */,
+				4935C6EA3009774A009ECB49 /* Frameworks */,
+				4935C6EB3009774A009ECB49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4935C6F03009774A009ECB49 /* stellarWatchWidgets */,
+			);
+			name = stellarWatchWidgetsExtension;
+			packageProductDependencies = (
+			);
+			productName = stellarWatchWidgetsExtension;
+			productReference = 4935C6ED3009774A009ECB49 /* stellarWatchWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -180,6 +320,12 @@
 						CreatedOnToolsVersion = 26.6;
 					};
 					4935C6A930082107009ECB49 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					4935C6D9300976B5009ECB49 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					4935C6EC3009774A009ECB49 = {
 						CreatedOnToolsVersion = 26.6;
 					};
 				};
@@ -200,6 +346,8 @@
 			targets = (
 				4935C68730080398009ECB49 /* stellar */,
 				4935C6A930082107009ECB49 /* stellarWidgetsExtension */,
+				4935C6D9300976B5009ECB49 /* stellarWatch Watch App */,
+				4935C6EC3009774A009ECB49 /* stellarWatchWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -213,6 +361,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4935C6A830082107009ECB49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4935C6D8300976B5009ECB49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4935C6EB3009774A009ECB49 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -236,6 +398,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4935C6D6300976B5009ECB49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4935C71C30097CCE009ECB49 /* StepsReader.swift in Sources */,
+				4935C71D30097CCE009ECB49 /* StepCount.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4935C6E93009774A009ECB49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4935C72230097CCE009ECB49 /* StepsReader.swift in Sources */,
+				4935C72330097CCE009ECB49 /* StepCount.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -243,6 +423,16 @@
 			isa = PBXTargetDependency;
 			target = 4935C6A930082107009ECB49 /* stellarWidgetsExtension */;
 			targetProxy = 4935C6BC30082108009ECB49 /* PBXContainerItemProxy */;
+		};
+		4935C6E3300976B6009ECB49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4935C6D9300976B5009ECB49 /* stellarWatch Watch App */;
+			targetProxy = 4935C6E2300976B6009ECB49 /* PBXContainerItemProxy */;
+		};
+		4935C6FD3009774A009ECB49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4935C6EC3009774A009ECB49 /* stellarWatchWidgetsExtension */;
+			targetProxy = 4935C6FC3009774A009ECB49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -490,6 +680,144 @@
 			};
 			name = Release;
 		};
+		4935C6E6300976B6009ECB49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "stellarWatch Watch App/stellarWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QWPX9R6A43;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = stellarWatch;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Reads your step count to show it on your watch face & widgets.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.e-l-l.stellar.stellar";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-l-l.stellar.stellar.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Debug;
+		};
+		4935C6E7300976B6009ECB49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "stellarWatch Watch App/stellarWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QWPX9R6A43;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = stellarWatch;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Reads your step count to show it on your watch face & widgets.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.e-l-l.stellar.stellar";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-l-l.stellar.stellar.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Release;
+		};
+		4935C7013009774A009ECB49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = stellarWatchWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QWPX9R6A43;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = stellarWatchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = stellarWatchWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-l-l.stellar.stellar.watchkitapp.stellarWatchWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Debug;
+		};
+		4935C7023009774A009ECB49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = stellarWatchWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QWPX9R6A43;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = stellarWatchWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = stellarWatchWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.e-l-l.stellar.stellar.watchkitapp.stellarWatchWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -516,6 +844,24 @@
 			buildConfigurations = (
 				4935C6C130082108009ECB49 /* Debug */,
 				4935C6C230082108009ECB49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4935C6E5300976B6009ECB49 /* Build configuration list for PBXNativeTarget "stellarWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4935C6E6300976B6009ECB49 /* Debug */,
+				4935C6E7300976B6009ECB49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4935C7003009774A009ECB49 /* Build configuration list for PBXNativeTarget "stellarWatchWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4935C7013009774A009ECB49 /* Debug */,
+				4935C7023009774A009ECB49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
