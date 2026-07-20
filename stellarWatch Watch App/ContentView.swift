@@ -2,12 +2,10 @@
 //  ContentView.swift
 //  stellarWatch Watch App
 //
-//  ⚠️ DESIGN HANDOFF STUB — no styling here on purpose.
-//
-//  The watch app is companion-first: its only job right now is to prompt for
-//  HealthKit authorization and keep the complication fed (see WatchStepsModel).
-//  This body shows the raw state as plain controls so the flow is verifiable;
-//  its appearance is owned by the separate Claude Design handoff.
+//  App shell. Owns the app-wide `WatchStepsModel` (HealthKit authorization + the
+//  long-lived step observer), injects it into the environment for the gallery /
+//  configure screens, and hosts the navigation stack rooted at the complications
+//  gallery (1a → Configure 1b → Goal picker 1c).
 //
 
 import SwiftUI
@@ -17,31 +15,10 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                Text(stepText)
-                Text(String(describing: model.authState))
-                Button("Authorize") {
-                    Task { await model.authorizeAndRefresh() }
-                }
-                NavigationLink("Daily Goal") {
-                    GoalSettingView()
-                }
-            }
-            .task { await model.start() }
+            GalleryView()
         }
-    }
-
-    private var stepText: String {
-        switch model.stepState {
-        case .pending:
-            "Loading"
-        case .available(let count):
-            "\(count.steps)"
-        case .unavailable:
-            "Unavailable"
-        case .failed:
-            "Error"
-        }
+        .environment(model)
+        .task { await model.start() }
     }
 }
 

@@ -17,7 +17,7 @@ its own `context.md` with file-level detail; this one explains how the pieces fi
 | --- | --- | --- | --- |
 | `stellar` | `stellar/` | `stellar.app` | iOS/iPadOS app. Gallery UI + splash. Hosts the widget extension and watch content. |
 | `stellarWidgetsExtension` | `stellarWidgets/` | `.appex` | iOS WidgetKit extension. Vends the **World Clock** widget. |
-| `stellarWatch Watch App` | `stellarWatch Watch App/` | watch `.app` | watchOS companion app. Owns HealthKit authorization + the long-lived step observer. |
+| `stellarWatch Watch App` | `stellarWatch Watch App/` | watch `.app` | watchOS companion app. Owns HealthKit authorization + the long-lived step observer; hosts the complications gallery, Steps configure surface, and Digital-Crown goal picker. |
 | `stellarWatchWidgetsExtension` | `stellarWatchWidgets/` | `.appex` | watchOS WidgetKit extension. Vends the **Steps** complication. |
 | _(shared, no target)_ | `stellarWorldClockShared/` | — | Platform-neutral World Clock model + renderer + palette. |
 | _(shared, no target)_ | `stellarWatchShared/` | — | Platform-neutral step models, HealthKit reader, and Steps visuals. |
@@ -52,10 +52,12 @@ it everywhere — you wire it into the targets that need it.
 | `stellarWorldClockShared/*` (City, Palette, Renderer) | ✓ | ✓ | | |
 | `stellarWatchShared/StepCount.swift` | ✓ | | ✓ | ✓ |
 | `stellarWatchShared/StepsReader.swift` | | | ✓ | ✓ |
-| `stellarWatchShared/StepsVisuals.swift` | ✓ | | | ✓ |
+| `stellarWatchShared/StepsVisuals.swift` | ✓ | | ✓ | ✓ |
 | `stellarWatchShared/StepGoalStore.swift` | | | ✓ | ✓ |
 
-(App membership on `StepCount`/`StepsVisuals` is what lets the Gallery preview Steps.)
+(App membership on `StepCount`/`StepsVisuals` lets the iOS Gallery preview Steps;
+watch-app membership on `StepsVisuals` lets the watch complications gallery reuse
+the *real* `StepsCircularVisual` renderer so its preview matches the face.)
 
 ## Build & run
 

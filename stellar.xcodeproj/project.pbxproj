@@ -30,6 +30,7 @@
 		B1000001301000000000001A /* stellarWatchShared/StepsVisuals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000004 /* stellarWatchShared/StepsVisuals.swift */; };
 		B10000013010000000000020 /* stellarWatchShared/StepGoalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000005 /* stellarWatchShared/StepGoalStore.swift */; };
 		B10000013010000000000021 /* stellarWatchShared/StepGoalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000005 /* stellarWatchShared/StepGoalStore.swift */; };
+		B10000013010000000000022 /* stellarWatchShared/StepsVisuals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000013010000000000004 /* stellarWatchShared/StepsVisuals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -460,6 +461,7 @@
 				4935C71C30097CCE009ECB49 /* stellarWatchShared/StepsReader.swift in Sources */,
 				4935C71D30097CCE009ECB49 /* stellarWatchShared/StepCount.swift in Sources */,
 				B10000013010000000000020 /* stellarWatchShared/StepGoalStore.swift in Sources */,
+				B10000013010000000000022 /* stellarWatchShared/StepsVisuals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
